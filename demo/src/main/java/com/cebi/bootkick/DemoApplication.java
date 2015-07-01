@@ -18,25 +18,26 @@ import org.springframework.web.WebApplicationInitializer;
 @EnableAsync
 @EnableScheduling
 public class DemoApplication extends SpringBootServletInitializer implements
-        WebApplicationInitializer {
+		WebApplicationInitializer {
 	// WebApplicationInitializer is for weblogic
 
-    // Used when deploying to a standalone servlet container, i.e. tomcat
-    @Override
-    protected SpringApplicationBuilder configure(
-            SpringApplicationBuilder application) {
-        return application.sources(DemoApplication.class);
-    }
+	// Used when deploying to a standalone servlet container, i.e. tomcat
+	@Override
+	protected SpringApplicationBuilder configure(
+			SpringApplicationBuilder application) {
+		return application.sources(DemoApplication.class);
+	}
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
 
-    // generic cache bu
-    @Bean
-    public CacheManager cacheManager() {
-        return new ConcurrentMapCacheManager("random", "another");
-    }
+	// generic cache bu
+	@Bean
+	public CacheManager cacheManager() {
+		return new ConcurrentMapCacheManager("random", "another");
+	}
 
-    // netbeans
+	// netbeans
+	// eclipse
 }
